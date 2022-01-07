@@ -11,11 +11,12 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
-const db = require("../app/models");
-db.mongosee
+const db = require("./app/models");
+
+db.mongoose
 .connect(db.url, {
     useNewUrlParser: true,
-    userUnifiedTopology: true
+    useUnifiedTopology: true
 })
 .then(() => {
     console.log("connected to the database!")
@@ -27,10 +28,13 @@ db.mongosee
 
 app.get("/", (req, res) => {
     res.json({message: "Welcome to bezkoder applicaton."})
-})
+});
+
+
+require('./app/routes/tutorial.routes')(app);
 
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, ()=> {
     console.log(`Server is running on port ${PORT}`);
-})
+});
