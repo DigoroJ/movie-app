@@ -4,6 +4,8 @@ const Tutorial = db.tutorials;
 
 
 exports.create = (req, res ) => {
+
+    console.log("Inside create")
     if(!req.body.title){
         res.status(400).send({message: "Content can not be empty!"});
         return;
@@ -26,8 +28,6 @@ exports.create = (req, res ) => {
         })
     })
 }
-
-
 
 exports.findAll = (req, res) => {
     const title = req.query.title;
@@ -115,11 +115,14 @@ exports.deleteAll = (req, res) => {
 
     Tutorial.deleteMany({})
     .then(data => {
-        message: `${data.deleteCount} Tutorials were deleted successfully.`
+        res.send({
+            message: `Tutorials were deleted successfully.`
+        })
     })
     .catch(err =>{
-        message: 
-            err.message || "Some error occurred while removing all tutorials."
+        res.send({
+            message: "Some error occurred while removing all tutorials."
+        })
     })
 }
 
