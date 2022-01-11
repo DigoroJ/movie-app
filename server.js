@@ -5,7 +5,7 @@ const db = require("./app/models");
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:51088/addtutorial"
+    origin: "http://localhost:4200"
 }
 
 app.use(cors(corsOptions));
