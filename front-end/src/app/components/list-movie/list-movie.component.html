@@ -1,0 +1,29 @@
+<div class="container">
+<!--time
+genre
+title 
+description
+year
+rate-->
+<div *ngFor="let movie of movies; index as i">
+<div class="card mt-3 bg-light border-0">
+        <div class="card-body">
+          <h5 class="card-title">{{i + 1}}<span class="text-primary"> {{movie.title}} </span> <span class="fw-lighter">( {{movie.year}} )</span></h5>
+          <div class="card-text">
+   
+        <p class="mb-1">
+            {{movie.rate}}
+        </p>
+        <p class="mb-1">
+          {{movie.time}} | {{movie.genre}}
+        </p>
+          <p>
+              {{movie.description}}
+          </p>
+          </div>
+        </div>
+      </div>
+</div>
+   
+      
+</div>

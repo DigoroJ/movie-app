@@ -1,17 +1,18 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./app/models");
-
+const moviesRoutes=require("./app/routes/movies.routes");
+const morgan = require('morgan');
 const app = express();
 
 var corsOptions = {
     origin: "http://localhost:4200"
 }
-
+app.use(morgan('dev'));
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
-
+app.use(express.static('public'));
 
 db.mongoose
 .connect(db.url, {
@@ -26,12 +27,7 @@ db.mongoose
     process.exit();
 })
 
-app.get("/", (req, res) => {
-    res.json({message: "Welcome to bezkoder applicaton."})
-});
-
-
-require('./app/routes/tutorial.routes')(app);
+app.use("/api/v1/movies/",moviesRoutes);
 
 const PORT = process.env.PORT || 8080;
 
