@@ -59,6 +59,8 @@ returns a single Movie from provided `id` [request.params.id==id]
 >GET : `/`
 
 returns list of all Movies
+**GET a movie by search**
+>GET : `/movie/search/?title={title}&genre={genre}&year={year}`
 
 **DELETE a Movie**
 

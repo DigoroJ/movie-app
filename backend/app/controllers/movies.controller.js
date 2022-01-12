@@ -39,7 +39,7 @@ exports.search = (req, res) => {
     condition = queries.title ? { title: { $regex: new RegExp(queries.title), $options: "i"}} : {};
     condition = queries.genre ? { genre: { $regex: new RegExp(queries.genre), $options: "i"}} : condition;
     condition = queries.year ? { year: { $regex: new RegExp(queries.year), $options: "i"}} : condition;
-
+    if(condition&& Object.keys(condition).length === 0 && Object.getPrototypeOf(condition) === Object.prototype) return res.status(404).send({message:"query not found"});
     Movie.find(condition)
     .then(data => {
         res.send(data);
