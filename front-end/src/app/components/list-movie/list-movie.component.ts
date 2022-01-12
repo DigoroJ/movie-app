@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from 'src/app/models/movie.model';
+import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
   selector: 'app-list-movie',
@@ -7,26 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListMovieComponent implements OnInit {
 
-  movies = [{
-    time: 138,
-    genre: "Comedy, Drama",
-    title: "Don't Look Up",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium in provident molestiae sint assumenda.",
-    year: 2021,
-    rate: 54
-    },{
-      time: 138,
-      genre: "Comedy, Drama 1",
-      title: "Don't Look Up 1",
-      description: "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium in provident molestiae sint assumenda.",
-      year: 2021,
-      rate: 54
-    }
-  ]
+  movies: Movie[] = []
+ 
 
-  constructor() { }
+  constructor(private ms: MovieService) { }
 
   ngOnInit(): void {
+   this.ms.getAll().subscribe(data => {
+     this.movies = data;
+     console.log(this.movies)
+   })
+  }
+
+  deleteMovie(id: any){
+    console.log(id);
   }
 
 }
