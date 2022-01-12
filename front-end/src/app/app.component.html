@@ -1,26 +1,25 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div><nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-      <!--img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"-->
-      <i class="bi bi-bug"></i>  Movies.com
+      <i class="bi bi-bug font-weight-bold">Movies</i>  
     </a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a routerLink="movies" class="nav-link active" aria-current="page">Home</a>
           </li>
           
           <li class="nav-item Add">
-            <a class="nav-link active" aria-current="page" href="#">Add Movies</a>
+            <a routerLink="add" class="nav-link active" aria-current="page" href="#">Add Movies</a>
           </li>
         </ul>
         
       </div>
     </div>
   </nav>
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 
-<app-list-movie></app-list-movie>
-<app-search></app-search>
-<app-add></app-add>
-<router-outlet></router-outlet>
