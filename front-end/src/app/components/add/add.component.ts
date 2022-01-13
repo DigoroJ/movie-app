@@ -38,6 +38,7 @@ export class AddComponent implements OnInit {
 
     .subscribe( data => {
       Swal.fire({title: "You have added successfully."})
+      this.movieForm.reset();
     });
    
     
