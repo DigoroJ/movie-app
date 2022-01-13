@@ -8,7 +8,8 @@
                 <h5>{{i + 1}}<span class="text-primary"> {{movie.title}} </span> <span class="fw-lighter">( {{movie.year}} )</span></h5>
                 <div>
                     <button (click)="deleteMovie(movie.id)" class="btn btn-danger btn-sm"><i class="bi bi-trash-fill me-2"></i>Delete</button> 
-                    <button class="btn btn-success btn-sm ms-2"><i class="bi bi-pencil-square me-2"></i>Edit</button> 
+                    <a class="btn btn-success btn-sm ms-2" routerLink="/editmovie/:{{ movie.id }}"><i class="bi bi-pencil-square me-2"></i>Edit</a> 
+                    
                 </div>
             </div>
 
@@ -16,7 +17,7 @@
                 <p class="mb-1">
                     <i class="bi bi-star-fill" style="color: gold;"></i> {{movie.rate}}
                 </p>
-                <p class="mb-1">{{movie.length}} | {{movie.genre}}</p>
+                <p class="mb-1">{{movie.length}}<span class="fw-light"> min</span> | {{movie.genre}}</p>
                 <p>{{movie.description}}</p>
             </div>
             </div>
