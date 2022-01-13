@@ -37,7 +37,7 @@ export class AddComponent implements OnInit {
     this._movieService.create(movie)
 
     .subscribe( data => {
-      Swal.fire({title: "You have deleted successfully."})
+      Swal.fire({title: "You have added successfully."})
     });
    
     
