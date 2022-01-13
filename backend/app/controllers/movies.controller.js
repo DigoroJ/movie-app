@@ -35,6 +35,7 @@ exports.create = (req, res ) => {
 exports.search = (req, res) => {
     const queries = req.query;
     if(!queries) return res.status(404).send({message:"add a queary"})
+    console.log(req.query);
     let condition={};
     condition = queries.title ? { title: { $regex: new RegExp(queries.title), $options: "i"}} : {};
     condition = queries.genre ? { genre: { $regex: new RegExp(queries.genre), $options: "i"}} : condition;
