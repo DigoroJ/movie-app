@@ -14,9 +14,9 @@
             <div class="col-md-3">
                 <!-- search  -->
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                    <input type="text" class="form-control" [(ngModel)]="data" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" id="huyfrddre" type="submit">Search</button>
+                        <button class="btn btn-outline-secondary" id="huyfrddre" type="submit" (click)="search()">Search</button>
                     </div>
                 </div>
             </div>      
