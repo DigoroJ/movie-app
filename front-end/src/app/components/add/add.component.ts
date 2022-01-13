@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Movie } from 'src/app/models/movie.model';
 import { MovieService } from 'src/app/services/movie.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add',
@@ -35,8 +36,9 @@ export class AddComponent implements OnInit {
   }
     this._movieService.create(movie)
 
-    .subscribe( data => console.log('working', data)
-    );
+    .subscribe( data => {
+      Swal.fire({title: "You have deleted successfully."})
+    });
    
     
   }
