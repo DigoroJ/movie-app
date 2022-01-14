@@ -1,0 +1,6 @@
+.container-fluids{
+    background-image: linear-gradient(rgba(209, 212, 221, 0.5), rgba(220, 250, 247, 0.5)), url("../assets/movies.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
