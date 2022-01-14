@@ -1,20 +1,22 @@
 
-<hr class="bg-primary mb-0ç">
-<h1>Add Movie</h1>
+<div class="mx-auto ps-2 mt-5" style="max-width: 500px;">
+  <h5 class="text-primary">Add Movie</h5>
+  <hr class="bg-primary">
+  </div>
 <div class="container">
 
 
-  <form class="row g-3 mx-auto mt-5" style="max-width: 500px;" [formGroup]="movieForm">
+  <form class="row g-3 mx-auto" style="max-width: 500px;" [formGroup]="movieForm">
   <div class="col-md-6">
     <label for="exampleFormControlInput1">Title</label>
         <input type="text" class="form-control" formControlName="title" >
   </div>
   <div class="col-md-6">
-    <label for="exampleFormControlInput1">Length</label>
+    <label for="exampleFormControlInput1">Length(minutes)</label>
         <input type="text" class="form-control" formControlName="length" >
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Description</label>
+    <label for="exampleFormControlTextarea1">Review</label>
     <textarea class="form-control" formControlName="description"  rows="3"></textarea>
   </div>
   <div class="col-md-6">
