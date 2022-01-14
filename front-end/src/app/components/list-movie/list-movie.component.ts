@@ -12,7 +12,6 @@ export class ListMovieComponent implements OnInit {
 
   movies: Movie[] = []
  
-
   constructor(private ms: MovieService) { }
 
   ngOnInit(): void {
@@ -22,7 +21,10 @@ export class ListMovieComponent implements OnInit {
   getMovies(){
     this.ms.getAll().subscribe(data => { this.movies = data})
   }
-
+  setMovies($event:any){
+     this.movies=$event;
+     //window.location.reload();
+  }
   deleteMovie(id: any){
    this.ms.delete(id).subscribe((data) => {
 

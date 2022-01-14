@@ -37,7 +37,7 @@ export class MovieService {
   }
   search(data: any): Observable<Movie[]> {
 
-    return this.http.get<Movie[]>(`${baseUrl}/search/?${data}=${data}`);
+    return this.http.get<Movie[]>(`${baseUrl}/search/?${data.option}=${data.value}`);
   }
  
 }
