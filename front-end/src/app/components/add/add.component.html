@@ -1,12 +1,12 @@
 
-<div class="mx-auto ps-2 mt-5" style="max-width: 500px;">
-  <h5 class="text-primary">Add Movie</h5>
-  <hr class="bg-primary">
+<div class="mx-auto ps-2 mt-5 text-white" style="max-width: 500px;">
+  <h5 class="text-white">Add Movie</h5>
+  <hr class="bg-text">
   </div>
 <div class="container">
 
 
-  <form class="row g-3 mx-auto" style="max-width: 500px;" [formGroup]="movieForm">
+  <form class="row g-3 mx-auto text-white" style="max-width: 500px;" [formGroup]="movieForm">
   <div class="col-md-6">
     <label for="exampleFormControlInput1">Title</label>
         <input type="text" class="form-control" formControlName="title" >
@@ -36,7 +36,7 @@
   </div>
   <div class="col-md-2">
     <label for="inputZip" class="form-label">Rating</label>
-    <input type="number" class="form-control" formControlName="rating" >
+    <input type="number" [min]="1" [max]="10" class="form-control" formControlName="rating" >
   </div>
   <div class="d-grid gap-2">
     <button class="btn btn-primary" (click)="onSubmit()" type="button">Add</button>

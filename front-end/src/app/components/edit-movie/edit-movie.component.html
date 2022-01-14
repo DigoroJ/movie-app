@@ -1,14 +1,14 @@
 
 
 <div class="mx-auto ps-2 mt-5" style="max-width: 500px;">
-<h5 class="text-primary">Edit Movie</h5>
-<hr class="bg-primary">
+<h5 class="text-primary text-white">Edit Movie</h5>
+<hr class="bg-text">
 </div>
 
 <div class="container">
 
 
-  <form class="row g-3 mx-auto mt-3" style="max-width: 500px;" [formGroup]="editMovieForm">
+  <form class="row g-3 mx-auto mt-3 text-white" style="max-width: 500px;" [formGroup]="editMovieForm">
   <div class="col-md-6">
     <label for="exampleFormControlInput1">Title</label>
         <input type="text" class="form-control" formControlName="title" >
@@ -38,10 +38,10 @@
   </div>
   <div class="col-md-2">
     <label for="inputZip" class="form-label">Rating</label>
-    <input type="number" class="form-control" formControlName="rating" >
+    <input type="number" [min]="1" [max]="10" class="form-control" formControlName="rating" >
   </div>
   <div class="d-grid gap-2">
-    <button class="btn btn-primary" (click)="onUpdate()" type="button">Add</button>
+    <button class="btn btn-primary" (click)="onUpdate()" type="button">Save</button>
   </div>
 </form>
 </div>
