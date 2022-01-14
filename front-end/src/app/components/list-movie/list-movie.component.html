@@ -1,6 +1,6 @@
 <div class="container">
 
-    <app-search></app-search>
+    <app-search (emitter)="setMovies($event)"></app-search>
     <div *ngFor="let movie of movies; index as i">
         <div class="card mt-3 bg-light border-0">
             <div class="card-body">
