@@ -12,7 +12,6 @@ export class ListMovieComponent implements OnInit {
 
   movies: Movie[] = []
  
-
   constructor(private ms: MovieService) { }
 
   ngOnInit(): void {
